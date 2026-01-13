@@ -1,0 +1,6 @@
+config_name,survival_rate,pmf_rate,avg_final_market_share,avg_technical_health,avg_business_performance,success_rate
+Adaptive/Balanced,100.0,100.0,6.78,7473.49,6323.04,95.0
+Always Engineering,100.0,100.0,7.45,7437.78,6338.88,100.0
+Always Marketing,100.0,100.0,6.75,7291.62,6309.24,95.0
+Always Quality,100.0,100.0,6.67,8826.99,6297.98,90.0
+Always Sales,100.0,100.0,7.25,7287.11,6324.1,100.0

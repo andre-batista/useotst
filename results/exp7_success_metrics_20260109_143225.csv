@@ -1,0 +1,6 @@
+config_name,survival_rate,pmf_rate,avg_final_market_share,success_rate
+Adaptive Pivot,60.0,60.0,3.61,50.0
+Early Pivot,30.0,30.0,2.02,25.0
+Late Pivot,70.0,75.0,3.14,20.0
+Mid Pivot,55.0,55.0,2.91,40.0
+Never Pivot,65.0,65.0,3.84,55.0
