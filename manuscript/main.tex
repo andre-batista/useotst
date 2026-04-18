@@ -81,7 +81,7 @@
 \maketitle
 \selectlanguage{english}
 \begin{abstract}
-Software engineering organizations operate as complex adaptive systems where technical decisions, organizational structures, and market forces interact through feedback loops to produce emergent outcomes. Despite this inherent systemic nature, existing research predominantly examines isolated components rather than their dynamic interdependencies, limiting understanding of why common strategies succeed or fail. This research develops an agent-based model of software engineering organizations as complex adaptive systems, revealing critical resource thresholds determining survival. Through 240 simulations, we identify binary survival gates: minimum runway sufficient to bridge profitability gaps (200 months in the baseline parameterization), dual commercial capacity thresholds ($\ge$6 staff, $\ge$30\% composition), and quality-velocity regimes. The absolute cutoff values are model-dependent and should not be interpreted literally; the central finding is the existence of threshold effects and their implications for strategy.
+Software engineering organizations operate as complex adaptive systems where technical decisions, organizational structures, and market forces interact through feedback loops to produce emergent outcomes. Despite this inherent systemic nature, existing research predominantly examines isolated components rather than their dynamic interdependencies, limiting understanding of why common strategies succeed or fail. This research develops an agent-based model of software engineering organizations as complex adaptive systems, suggesting critical resource thresholds determining survival. Through 240 simulations, we identify binary survival gates: minimum runway sufficient to bridge profitability gaps (200 months in the baseline parameterization), dual commercial capacity thresholds ($\ge$6 staff, $\ge$30\% composition), and quality-velocity regimes. The absolute cutoff values are model-dependent and should not be interpreted literally; the central finding is the evidence for the existence of threshold effects and their implications for strategy.
 \textbf{Keywords} --- Systems Thinking, Software Engineering Organizations, Agent-Based Modeling, Complex Adaptive Systems%
 \end{abstract}%
 
@@ -89,15 +89,15 @@ Software engineering organizations operate as complex adaptive systems where tec
 
 Software engineering has evolved from a primarily technical discipline to a complex socio-technical endeavor encompassing organizational dynamics, human factors, and strategic decision-making \cite{brooks1987, sommerville2016}. The success or failure of software ventures increasingly depends on the interplay between technical decisions, organizational structure, and market forces, yet traditional approaches often focus on isolated components rather than their interactions \cite{boehm2006}.
 
-Systems thinking provides a framework for understanding such complex adaptive systems, emphasizing circular causality, feedback mechanisms, and emergent properties \cite{senge1990, sterman2000, meadows2008}. In software engineering, it explains counterintuitive phenomena: how increasing team size can decrease productivity (Brooks's Law), how focusing solely on speed can paradoxically slow development through technical debt accumulation, or how optimizing individual team performance may undermine overall effectiveness \cite{repenning2001, miller2015}. Despite this, existing research predominantly examines either technical or organizational factors in isolation, rarely modeling their co-evolution \cite{kruchten2013}. Empirical studies employ linear statistical models that fail to capture feedback effects and non-linear relationships \cite{madachy2008}. Agent-based modeling (ABM) has emerged as a promising approach to bridge this gap \cite{north2013, wilensky2015}, yet its application to software engineering organizations remains nascent.
+Systems thinking provides a framework for understanding such complex adaptive systems, emphasizing circular causality, feedback mechanisms, and emergent properties \cite{senge1990, sterman2000, meadows2008}. In software engineering, it explains counterintuitive phenomena: how increasing team size can decrease productivity (Brooks's Law), how focusing solely on speed can paradoxically slow development through technical debt accumulation, or how optimizing individual team performance may undermine overall effectiveness \cite{repenning2001, miller2015}. Despite this, existing research predominantly examines either technical or organizational factors in isolation, rarely modeling their co-evolution \cite{kruchten2013}. Empirical studies employ linear statistical models that fail to capture feedback effects and non-linear relationships \cite{madachy2008}. Agent-based modeling (ABM) is a potential approach to bridge this gap \cite{north2013, wilensky2015}, yet its application to software engineering organizations remains nascent.
 
-This article addresses these gaps with three contributions: (1) a comprehensive ABM representing key stakeholders (engineers, sales, marketing, HR, management) as autonomous agents whose interactions generate emergent organizational outcomes; (2) systematic exploration through three computational experiments examining team composition, quality-speed tradeoffs, and financial constraints, revealing threshold effects and non-linear dynamics; and (3) a methodological blueprint for applying systems thinking and ABM to software engineering research. The remainder is organized as follows: Section 2 reviews related work, Section 3 describes the methodology, Section 4 reports experimental results, and Section 5 concludes with implications and limitations
+This article addresses these gaps with three contributions: (1) a comprehensive ABM representing key stakeholders (engineers, sales, marketing, HR, management) as autonomous agents whose interactions generate emergent organizational outcomes; (2) systematic exploration through three computational experiments examining team composition, quality-speed tradeoffs, and financial constraints, revealing threshold effects and non-linear dynamics; and (3) a methodological blueprint for applying systems thinking and ABM to software engineering research. The remainder is organized as follows: Section 2 reviews related work, Section 3 describes the methodology, Section 4 reports experimental results, and Section 5 concludes with implications and limitations.
 
 \section{Related Work}
 
 Our work builds upon three research streams: systems thinking in software engineering, agent-based modeling of organizations, and empirical studies of team performance.
 
-\textbf{Systems thinking and feedback in software engineering.} \citet{lehman1996feedback, lehman1999impact} established that software evolution constitutes a multi-loop feedback system where self-stabilizing mechanisms constrain process behavior, requiring explicit modeling of global feedback loops rather than isolated technical innovations. \citet{franco2023systems} operationalized these mechanisms for technical debt management, formulating interacting feedback loops explaining how shortcuts degrade maintenance productivity. \citet{lee2004multi} demonstrated feedback loops between workload, exhaustion, and productivity in multi-project environments, while \citet{chernoguz2011system} used System Dynamics to investigate Brooks's Law boundaries, showing that productivity decreases linearly with team size due to coordination burdens but that mentoring investment can mitigate schedule slippage. These works establish the theoretical importance of feedback mechanisms but remain limited to particular contexts without integrating technical, organizational, and market dimensions.
+\textbf{Systems thinking and feedback in software engineering.} \citet{lehman1996feedback} and \citet{lehman1999impact} established that software evolution constitutes a multi-loop feedback system where self-stabilizing mechanisms constrain process behavior, requiring explicit modeling of global feedback loops rather than isolated technical innovations. \citet{franco2023systems} operationalized these mechanisms for technical debt management, formulating interacting feedback loops explaining how shortcuts degrade maintenance productivity. \citet{lee2004multi} demonstrated feedback loops between workload, exhaustion, and productivity in multi-project environments, while \citet{chernoguz2011system} used System Dynamics to investigate Brooks's Law boundaries, showing that productivity decreases linearly with team size due to coordination burdens but that mentoring investment can mitigate schedule slippage. These works establish the theoretical importance of feedback mechanisms but remain limited to particular contexts without integrating technical, organizational, and market dimensions.
 
 \textbf{Agent-based modeling of organizations.} \citet{crowder2012development} developed a seminal ABM for Integrated Product Teams with empirically-grounded agent behaviors (competency, motivation, trust, availability), demonstrating that competency dominates work quality while availability determines completion time. \citet{lapp2019kaboom} introduced cognitive style into team problem-solving simulations, revealing that optimal strategies depend on problem characteristics and team composition. \citet{meluso2019agent, meluso2022review} linked organizational miscommunication to system performance through the CESIUM framework, showing convergence time scales with network size. Systematic reviews \cite{sandria2024agent, negahban2014agent} identify critical limitations: prevalence of abstract models lacking empirical grounding and need for robust verification. \citet{zali2014system} found computational modeling underutilized for strategic decision support in venture contexts. While these approaches capture team dynamics effectively, they predominantly focus on engineering design teams, not the full socio-technical complexity of software organizations including market forces and financial constraints.
 
@@ -140,7 +140,7 @@ Management & Management Capacity (30-100), Strategic Vision (30-100), Crisis Man
 \end{tabular}
 \end{table}
 
-Each agent's capabilities are initialized randomly within [30, 100], representing organizational talent heterogeneity. The lower bound reflects hiring thresholds; initial assignments follow uniform distributions, abstracting from extreme talent heterogeneity (e.g., ``10x engineers'')—Section~\ref{sec:limitations} discusses implications. Capabilities evolve through learning mechanisms modulated by product state, organizational alignment, and strategic focus.
+Each agent's capabilities are initialized randomly within [30, 100], representing organizational talent heterogeneity. The lower bound reflects hiring thresholds; initial assignments follow uniform distributions, abstracting from extreme talent heterogeneity (e.g., ``10x engineers'') — Section~\ref{sec:limitations} discusses implications. Capabilities evolve through learning mechanisms modulated by product state, organizational alignment, and strategic focus.
 
 \subsection{Product State Variables}
 
@@ -180,7 +180,7 @@ The model implements eight primary feedback loops (four reinforcing, four balanc
 
 \textbf{Reinforcing loops:} R1 (Short-Term Focus) drives growth through feature-market-revenue coupling. R2 (Bug Accumulation) captures catastrophic defect cascades when bug count exceeds resolution capacity. R3 (Brand-Sales Synergy) creates compounding returns to coordinated commercial activity. R4 (Alignment-Performance Spiral) couples organizational alignment with performance outcomes.
 
-\textbf{Balancing loops:} B1 (Technical Debt Brake) implements the quality-velocity tradeoff \cite{lehman1996feedback, franco2023systems}—development shortcuts generate technical debt imposing drag on velocity. B2 (Market Saturation) implements diminishing returns through a $(1-M)^2$ saturation function. B3 (Quality Investment Tradeoff) governs allocation between feature development and quality improvement. B4 (Conflict Dynamics) represents conflict generation and resolution through HR mechanisms.
+\textbf{Balancing loops:} B1 (Technical Debt Brake) implements the quality-velocity tradeoff \cite{lehman1996feedback, franco2023systems} — development shortcuts generate technical debt imposing drag on velocity. B2 (Market Saturation) implements diminishing returns through a $(1-M)^2$ saturation function. B3 (Quality Investment Tradeoff) governs allocation between feature development and quality improvement. B4 (Conflict Dynamics) represents conflict generation and resolution through HR mechanisms.
 
 \subsection{Strategic Decision Mechanisms}
 
@@ -218,7 +218,7 @@ Management agents assess organizational state periodically and execute strategic
 
 \draw[posarrow] (dev) -- node[above, loop, pos=0.5] {speed focus} (velocity);
 \draw[posarrow] (velocity) to[bend left=15, in=200, out=0] node[right, loop] {+} (debt);
-\draw[negarrow] (debt) to[bend right=20] node[above, loop] {--} (velocity);
+% \draw[negarrow] (debt) to[bend right=20] node[above, loop] {--} (velocity);
 \draw[negarrow] (debt) to[bend left=20] node[left, loop, pos=0.7] {drag} (features);
 \node[loop, red] at (1, 3) {B1: Tech Deb\\Brake};
 
@@ -345,7 +345,7 @@ Minimal & 5 & 3 & 2 & 1 & 1 & 12 & Lean startup \\
 \end{tabular}
 \end{table}
 
-Results reveal dramatic bifurcation (Table~\ref{tab:exp1_summary_results}): Tech-Heavy achieves 0\% survival (failing at 14.75 months), Minimal achieves 35\% survival (failing at 19.85 months), while commercial-capable configurations (Sales-Heavy, Balanced, Marketing-Heavy) achieve 100\% survival.
+Results indicate significant bifurcation (Table~\ref{tab:exp1_summary_results}): Tech-Heavy achieves 0\% survival (failing at 14.75 months), Minimal achieves 35\% survival (failing at 19.85 months), while commercial-capable configurations (Sales-Heavy, Balanced, Marketing-Heavy) achieve 100\% survival.
 
 \begin{table}[!htbp]
 \centering
@@ -365,9 +365,9 @@ Sales-Heavy & 100\% & --- & $17.70 \pm 1.58$ & $341.41 \pm 37.96$ & $21.22 \pm 0
 \end{tabular}
 \end{table}
 
-A dual-threshold structure governs viability. First, commercial proportion threshold: Tech-Heavy (8\% commercial) fails universally from revenue incapacity despite 20 engineers. Second, absolute capacity threshold: Minimal (5 commercial staff, 42\% proportion) experiences 65\% failure despite adequate proportion—insufficient absolute headcount triggers quality-driven collapse (debt=24.21, bugs=6.86). Survival requires both $\geq$30\% commercial proportion AND $\geq$6 absolute commercial staff.
+A dual-threshold structure governs viability. First, commercial proportion threshold: Tech-Heavy (8\% commercial) fails universally from revenue incapacity despite 20 engineers. Second, absolute capacity threshold: Minimal (5 commercial staff, 42\% proportion) experiences 65\% failure despite adequate proportion — insufficient absolute headcount triggers quality-driven collapse (debt=24.21, bugs=6.86). Survival requires both a commercial proportion greater than 30\% and an absolute commercial staff of at least 6.
 
-Among survivors, Sales-Heavy dominates with 17.70\% market share and \$341.41 revenue—46\% higher than Balanced despite identical headcount (Figure~\ref{fig:exp1_overview}). Marketing-Heavy underperforms substantially (7.52\% share, \$120.30 revenue), revealing that conversion capacity dominates demand generation.
+Among survivors, Sales-Heavy dominates with 17.70\% market share and \$341.41 revenue — 46\% higher than Balanced despite identical headcount (Figure~\ref{fig:exp1_overview}). Marketing-Heavy underperforms substantially (7.52\% share, \$120.30 revenue), revealing that conversion capacity dominates demand generation.
 
 \begin{figure}[!htbp]
     \centering
@@ -387,7 +387,7 @@ Time-series analysis (Figure~\ref{fig:exp3_timeseries}) reveals distinct failure
     \label{fig:exp3_timeseries}
 \end{figure}
 
-Strategic implications establish minimum viable capacity: $\geq$8 engineers, $\geq$6 commercial staff, $\geq$15 total headcount. Below these thresholds, organizations enter stochastic failure zones. Sales capacity provides greater leverage than marketing (135\% market share advantage, 184\% revenue advantage). Among survivors, engineering headcount variation produces indistinguishable quality outcomes, suggesting an engineering sufficiency threshold beyond which additional capacity should redirect to commercial functions. Organizational alignment and conflict exhibit minimal differentiation across configurations—survivors maintain 100.0 alignment and zero conflict, confirming that financial constraints and quality degradation dominate survival outcomes under current parameterization.
+Strategic implications indicate minimum viable capacity: $\geq$8 engineers, $\geq$6 commercial staff, $\geq$15 total headcount. Below these thresholds, organizations entered stochastic failure zones. Sales capacity provides greater leverage than marketing (135\% market share advantage, 184\% revenue advantage). Among survivors, engineering headcount variation produces indistinguishable quality outcomes, suggesting an engineering sufficiency threshold beyond which additional capacity should redirect to commercial functions. Organizational alignment and conflict exhibit minimal differentiation across configurations — survivors maintain 100.0 alignment and zero conflict, confirming that financial constraints and quality degradation dominate survival outcomes under current parameterization.
 
 \subsection{Experiment 2: Quality vs. Speed Development Strategies}
 
@@ -395,7 +395,13 @@ Experiment 2 tests quality-velocity tradeoffs \cite{lehman1996feedback, franco20
 
 Results reveal survival bifurcation: Technical Debt Spiral achieves 0\% survival (collapsing at $27.75 \pm 5.82$ months with debt$=$68.14, bugs$=$37.42), while four other strategies achieve 100\% survival (Table~\ref{tab:exp2_results}). This demonstrates Loops B1 and R2 engaging destructively when debt generation exceeds refactoring capacity.
 
-Quality First outperforms Move Fast Break Things despite 2.4$\times$ slower initial velocity: 139.89 vs 57.91 features (2.4$\times$), \$142.20 vs \$41.07 revenue (246\% higher), sustainability 0.998 vs 0.269. Move Fast accumulates debt$=$110.20 imposing 71\% revenue penalty via Loop B1, while Quality First maintains zero debt enabling sustained productivity (Figure~\ref{fig:exp4_tradeoffs}).
+Quality First outperforms Move Fast Break Things despite a 2.4$\times$ slower initial
+velocity. Over 200 months, Quality First delivers 139.89 features versus 57.91,
+generates \$142.20 in revenue compared to \$41.07 (246\% higher), and achieves a
+sustainability index of 0.998 versus 0.269. This advantage is explained by debt
+accumulation: Move Fast accrues a technical debt of 110.20, imposing a 71\% revenue
+penalty through Loop B1, whereas Quality First maintains zero debt, enabling sustained
+development productivity (Figure~\ref{fig:exp4_tradeoffs}).
 
 \begin{figure}[!htbp]
     \centering
@@ -473,16 +479,25 @@ Capital efficiency degrades exponentially: Bootstrapped achieves 0.248 market sh
     \label{fig:exp3_roi}
 \end{figure}
 
-Strategic implications: capital operates as binary survival gate, PMF achievement proves capital-independent, performance remains uniform across 10$\times$ capital range, and optimal capitalization targets minimum viable runway to bridge profitability gaps. The specific 200-month threshold reflects model parameterization (Section~\ref{sec:limitations}) and should be interpreted qualitatively.
+These results carry several strategic implications. First, capital functions as a
+binary survival gate: below the critical threshold, failure is certain regardless of
+other factors, while above it, performance converges regardless of funding abundance.
+Second, PMF achievement is independent of capital level, suggesting that product
+development dynamics are governed by team composition rather than financial slack.
+Third, performance metrics remain largely uniform across a $10\times$ capital range
+among survivors, indicating that optimal capitalization should target the minimum
+runway sufficient to bridge the profitability gap rather than maximize funding.
+The specific 200-month threshold is an artifact of the model parameterization
+(Section~\ref{sec:limitations}) and should be interpreted qualitatively.
 
 \section{Conclusion}
 \label{sec:limitations}
 
-This research developed an agent-based model of software engineering organizations as complex adaptive systems and conducted theoretical exploration through 240 simulation runs across three experiments. Four primary contributions emerge: (1) identification of critical resource thresholds functioning as binary survival gates---capital sufficient to bridge profitability gaps, and dual commercial capacity thresholds ($\geq$6 staff at $\geq$30\% composition); (2) demonstration that extreme velocity strategies trigger catastrophic collapse while moderate approaches avoid debt spirals; (3) demonstration that resource thresholds dominate strategic optimization---capital abundance yields no performance improvement among survivors; and (4) methodological demonstration revealing emergent phenomena potentially obscured by survivorship bias. Reported numeric cutoffs are model-dependent and should be read as qualitative indicators of threshold structure.
+This research developed an agent-based model of software engineering organizations as complex adaptive systems and conducted theoretical exploration through 240 simulation runs across three experiments. Four primary contributions emerge: (1) identification of critical resource thresholds functioning as binary survival gates --- capital sufficient to bridge profitability gaps, and dual commercial capacity thresholds ($\geq$6 staff at $\geq$30\% composition); (2) demonstration that extreme velocity strategies trigger catastrophic collapse while moderate approaches avoid debt spirals; (3) demonstration that resource thresholds dominate strategic optimization --- capital abundance yields no performance improvement among survivors; and (4) methodological demonstration revealing emergent phenomena potentially obscured by survivorship bias. Reported numeric cutoffs are model-dependent and should be read as qualitative indicators of threshold structure.
 
-For practitioners, resource adequacy precedes strategic optimization. Quality-focused approaches paradoxically deliver superior long-term velocity through sustained productivity. Growth-stage companies should recognize exponential capital efficiency degradation with funding abundance. Theoretically, selective activation of quality degradation mechanisms illustrates systems thinking principles---organizations maintaining moderate quality parameters operate in stable equilibria, while extreme strategies cross threshold boundaries entering unstable regimes.
+For practitioners, resource adequacy precedes strategic optimization. Quality-focused approaches paradoxically deliver superior long-term velocity through sustained productivity. Growth-stage companies should recognize exponential capital efficiency degradation with funding abundance. Theoretically, selective activation of quality degradation mechanisms illustrates systems thinking principles --- organizations maintaining moderate quality parameters operate in stable equilibria, while extreme strategies cross threshold boundaries entering unstable regimes.
 
-Limitations include model simplifications and parameter calibration from literature estimates. Several outcomes exhibit near-perfect convergence (alignment $\approx 100\%$, conflict $\approx 0$, PMF 100\%) reflecting baseline parameterization with strong stabilizing feedbacks. The 200-month capital threshold is unrealistic for startups, reflecting conservative revenue scaling---recalibration would likely yield 24--36 months. Uniform talent distributions [30, 100] abstract from extreme talent heterogeneity; testing heavy-tailed distributions is a natural extension. Future work should validate revenue parameters, explore talent distribution effects, and incorporate competitive dynamics. The central lesson remains: with inadequate resources, no strategy prevents failure; with adequate resources, diverse strategies may succeed.
+Limitations include model simplifications and parameter calibration from literature estimates. Several outcomes exhibit near-perfect convergence (alignment $\approx 100\%$, conflict $\approx 0$, PMF 100\%) reflecting baseline parameterization with strong stabilizing feedbacks. The 200-month capital threshold is unrealistic for startups, reflecting conservative revenue scaling --- recalibration would likely yield 24--36 months. Uniform talent distributions [30, 100] abstract from extreme talent heterogeneity; testing heavy-tailed distributions is a natural extension. Future work should validate revenue parameters, explore talent distribution effects, and incorporate competitive dynamics. The central lesson remains: with inadequate resources, no strategy prevents failure; with adequate resources, diverse strategies may succeed.
 
 % \section*{Acknowledgements}\label{acknowledgements}
 
